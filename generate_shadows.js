@@ -14,8 +14,9 @@ if (!fs.existsSync(spriteDir)) fs.mkdirSync(spriteDir);
 
     const files = fs.readdirSync(spriteDir).filter(f =>
         f.endsWith('.png') &&
-        !f.includes('-') &&                   // skip things like 123-mega.png
-        !f.includes('-SHADOW')               // don't reprocess
+        !f.includes('-') &&
+        f.startsWith('9') //&&                   // skip things like 123-mega.png
+        //!f.includes('-SHADOW')               // don't reprocess
     );
 
     for (const file of files) {
